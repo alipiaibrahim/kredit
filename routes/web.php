@@ -26,7 +26,7 @@ use App\Http\Controllers\SimulasiController;
 // });
 
 Route::get('/', function () {
-    return view('dashboard');
+    return view('welcome');
 });
 
 Auth::routes();
@@ -65,6 +65,7 @@ Route::patch('/kriteria/{id}', [KriteriaController::class, 'update'])->name('kri
 Route::get('admin/pinjaman', [SimulasiController::class, 'index'])->name('pinjaman.index');
 Route::post('/pinjaman/simulasi', [SimulasiController::class, 'simulasi'])->name('pinjaman.simulasi');
 
-Route::get('admin/perhitungan', [PerhitungganController::class, 'index'])->name('akun.show');
+Route::get('admin/perhitungan', [PerhitungganController::class, 'index'])->name('perhitungan.show');
 Route::get('/perhitungan/create', [PerhitungganController::class, 'create'])->name('perhitungan.create');
 Route::post('perhitungan/store', [PerhitungganController::class, 'store'])->name('perhitungan.store');
+Route::get('perhitungan/hasil', [PerhitungganController::class, 'hasil'])->name('perhitungan.hasil');

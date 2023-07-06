@@ -16,10 +16,10 @@
                         <label for="jumlah_pinjaman">Jumlah Pinjaman</label>
                         <input type="number" class="form-control" id="jumlah_pinjaman" name="jumlah_pinjaman" required>
                     </div>
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <label for="bunga">Bunga Pinjaman (%)</label>
-                        <input type="number" class="form-control" id="bunga" name="bunga">
-                    </div>
+                        <input type="number" class="form-control" id="bunga" name="bunga" value="10%">
+                    </div> --}}
                     <div class="form-group">
                         <label for="bulan">Durasi Pinjaman (bulan)</label>
                         <input type="number" class="form-control" id="bulan" name="bulan" required>

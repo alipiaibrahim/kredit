@@ -16,12 +16,12 @@ class SimulasiController extends Controller
     {
         $validatedData = $request->validate([
             'jumlah_pinjaman' => 'required|numeric',
-            'bunga' => 'nullable|numeric',
+            
             'bulan' => 'required|integer',
         ]);
 
         $jumlah_pinjaman = $request->input('jumlah_pinjaman');
-        $bunga = $request->input('bunga') ?? 10; // Set default interest rate to 10% if not provided
+        $bunga =  10; // Set default interest rate to 10% if not provided
         $bulan = $request->input('bulan');
 
         $interest = ($jumlah_pinjaman * $bunga * $bulan) / 100;

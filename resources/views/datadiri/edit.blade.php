@@ -23,27 +23,15 @@
             <input type="text" name="no_ktp" id="no_ktp" class="form-control" value="{{ $nasabah->no_ktp }}"
                 required>
         </div>
+        <div class="form-group">
+            <label for="tgl_lahir">Tanggal Lahir:</label>
+            <input type="text" name="tgl_lahir" id="tgl_lahir" class="form-control" value="{{ $nasabah->tgl_lahir }}"
+                required>
+        </div>
 
         <div class="form-group">
             <label for="alamat">Alamat:</label>
             <input type="text" name="alamat" id="alamat" class="form-control" value="{{ $nasabah->alamat }}"
-                required>
-        </div>
-
-        <div class="form-group">
-            <label for="desa">Desa:</label>
-            <input type="text" name="desa" id="desa" class="form-control" value="{{ $nasabah->desa }}" required>
-        </div>
-
-        <div class="form-group">
-            <label for="kecamatan">Kecamatan:</label>
-            <input type="text" name="kecamatan" id="kecamatan" class="form-control" value="{{ $nasabah->kecamatan }}"
-                required>
-        </div>
-
-        <div class="form-group">
-            <label for="kabupaten">Kabupaten:</label>
-            <input type="text" name="kabupaten" id="kabupaten" class="form-control" value="{{ $nasabah->kabupaten }}"
                 required>
         </div>
         <div class="form-group">
@@ -59,8 +47,7 @@
 
         <div class="form-group">
             <label for="email">Email:</label>
-            <input type="email" name="email" id="email" class="form-control" value="{{ $nasabah->email }}"
-                required>
+            <input type="email" name="email" id="email" class="form-control" value="{{ $nasabah->email }}" required>
         </div>
 
         <div class="form-group">

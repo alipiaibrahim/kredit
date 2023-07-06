@@ -29,10 +29,8 @@ class NasabahController extends Controller
 
         $nasabah->nama = $req->get('nama');
         $nasabah->no_ktp = $req->get('no_ktp');
+        $nasabah->tgl_lahir = $req->get('tgl_lahir');
         $nasabah->alamat = $req->get('alamat');
-        $nasabah->desa = $req->get('desa');
-        $nasabah->kecamatan = $req->get('kecamatan');
-        $nasabah->kabupaten = $req->get('kabupaten');
         $nasabah->pekerjaan = $req->get('pekerjaan');
         $nasabah->tlpn = $req->get('tlpn');
         $nasabah->email = $req->get('email');
@@ -55,22 +53,35 @@ class NasabahController extends Controller
     }
 
     public function update(Request $req, $id)
-    {
-        $nasabah = Nasabah::find($id);
-        $nasabah->nama = $req->get('nama');
-        $nasabah->no_ktp = $req->get('no_ktp');
-        $nasabah->alamat = $req->get('alamat');
-        $nasabah->desa = $req->get('desa');
-        $nasabah->kecamatan = $req->get('kecamatan');
-        $nasabah->kabupaten = $req->get('kabupaten');
-        $nasabah->pekerjaan = $req->get('pekerjaan');
-        $nasabah->tlpn = $req->get('tlpn');
-        $nasabah->email = $req->get('email');
-        $nasabah->tujuan_pinjaman = $req->get('tujuan_pinjaman');
+    { {
+            $validate = $req->validate([
+                'nama' => 'required',
+                'no_ktp' => 'required|',
+                'alamat' => 'required',
+                'tgl_lahir' => 'required',
+                'pekerjaan' => 'required',
+                'tlpn' => 'required',
+                'email' => 'required',
+                'tujuan_pinjaman' => 'required',
+            ]);
+
+            $nasabah = Nasabah::find($id);
+            $nasabah->nama = $req->get('nama');
+            $nasabah->no_ktp = $req->get('no_ktp');
+            $nasabah->alamat = $req->get('alamat');
+            $nasabah->tgl_lahir = $req->get('tgl_lahir');
+            $nasabah->pekerjaan = $req->get('pekerjaan');
+            $nasabah->tlpn = $req->get('tlpn');
+            $nasabah->email = $req->get('email');
+            $nasabah->tujuan_pinjaman = $req->get('tujuan_pinjaman');
+        }
 
         $nasabah->save();
-
-        return redirect()->route('datadiri.show')->with('success', 'Data berhasil diperbarui.');
+        $notification = array(
+            'message' => 'Data Buku Berhasil ditambahkan',
+            'alert-type' => 'success'
+        );
+        return redirect()->route('datadiri.show')->with($notification);
     }
 
     public function destroy($id)

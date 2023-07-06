@@ -17,10 +17,8 @@ class CreateNasabahsTable extends Migration
             $table->id();
             $table->string('nama');
             $table->bigInteger('no_ktp');
+            $table->date('tgl_lahir');
             $table->string('alamat');
-            $table->string('desa');
-            $table->string('kecamatan');
-            $table->string('kabupaten');
             $table->string('pekerjaan');
             $table->integer('tlpn');
             $table->string('email');

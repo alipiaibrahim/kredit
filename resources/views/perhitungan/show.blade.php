@@ -1,93 +1,72 @@
 @extends('adminlte::page')
-
-@section('title', 'Form Perhitungan Kredit')
-
+@section('title', 'Data Diri')
 @section('content_header')
-    <h1>Form Perhitungan Kredit</h1>
+    <h1>Data Diri</h1>
 @stop
-
 @section('content')
-    <div class="box">
-        <div class="box-header with-border">
-            <h3 class="box-title">Input Data Kredit</h3>
-        </div>
-        <div class="box-body">
-            @if (session('success'))
-                <div class="alert alert-success">
-                    {{ session('success') }}
-                </div>
-            @endif
+    <div class="container-fluid">
+        <div>
             <a href="/perhitungan/create">Tambah Data</a>
-            <form method="POST" action="{{ route('perhitungan.store') }}">
-                @csrf
 
-                <div class="form-group">
-                    <label for="nama">Nama</label>
-                    <input type="text" class="form-control" id="nama" name="nama" required>
+            <div>
+                <div class="card card-default">
+                    <div class="card-header">{{ __('Data Diri') }}</div>
+                    <div class="card-body">
+                        <table id="table-data" class="table table-white table-responsive">
+                            <thead>
+                                <tr class="text-center">
+                                    <th>No</th>
+                                    <th>Nama</th>
+                                    <th>Penghasilan</th>
+                                    <th>Usia</th>
+                                    <th>Status Pekerjaan</th>
+                                    <th>Keluarga</th>
+                                    <th>Status Rumah</th>
+                                    <th>Penjamin</th>
+                                    <th>Cicilan</th>
+                                    <th>BPKB Kendaran</th>
+                                    <th>Lama Bekerja</th>
+                                    <th>Hasil</th>
+                                    <th>Status</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @php $no=1; @endphp
+                                @foreach ($perhitungans as $row)
+                                    <tr>
+                                        <td class="text-center">{{ $no++ }}</td>
+                                        <td class="text-center">{{ $row->nama }}</td>
+                                        <td class="text-center">{{ $row->penghasilan }}</td>
+                                        <td class="text-center">{{ $row->usia }}</td>
+                                        <td class="text-center">{{ $row->status_pekerjaan }}</td>
+                                        <td class="text-center">{{ $row->keluarga }}</td>
+                                        <td class="text-center">{{ $row->status_rumah }}</td>
+                                        <td class="text-center">{{ $row->penjamin }}</td>
+                                        <td class="text-center">{{ $row->cicilan }}</td>
+                                        <td class="text-center">{{ $row->bpkb_kendaraan }}</td>
+                                        <td class="text-center">{{ $row->lama_bekerja }}</td>
+                                        <td class="text-center">{{ $row->hasil }}</td>
+                                        <td class="text-center">{{ $row->status }}</td>
+                                        <td>
+                                            {{-- <a href="{{ route('perhitungan.edit', $row->id) }}"> <i
+                                                    class="fa fa-edit"></i></a> --}}
+                                            <a href="perhitungan/delete/{{ $row->id }}"
+                                                onclick="return confirm('Apakah Anda Yakin Menghapus Data?')"><i
+                                                    class="fa fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-
-                <div class="form-group">
-                    <label for="penghasilan">Penghasilan</label>
-                    <input type="number" class="form-control" id="penghasilan" name="penghasilan" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="usia">Usia</label>
-                    <input type="number" class="form-control" id="usia" name="usia" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="status_pekerjaan">Status Pekerjaan</label>
-                    <input type="text" class="form-control" id="status_pekerjaan" name="status_pekerjaan" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="keluarga">Keluarga</label>
-                    <input type="number" class="form-control" id="keluarga" name="keluarga" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="status_rumah">Status Rumah</label>
-                    <input type="text" class="form-control" id="status_rumah" name="status_rumah" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="penjamin">Penjamin</label>
-                    <input type="text" class="form-control" id="penjamin" name="penjamin" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="cicilan">Cicilan</label>
-                    <input type="number" class="form-control" id="cicilan" name="cicilan" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="bpkb_kendaraan">BPKB Kendaraan</label>
-                    <select class="form-control" id="bpkb_kendaraan" name="bpkb_kendaraan" required>
-                        <option value="0">Tidak Ada</option>
-                        <option value="1">Ada</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="lama_bekerja">Lama Bekerja</label>
-                    <input type="number" class="form-control" id="lama_bekerja" name="lama_bekerja" required>
-                </div>
-
-                <div class="box-footer">
-                    <button type="submit" class="btn btn-primary">Simpan</button>
-                </div>
-            </form>
+            </div>
         </div>
-    </div>
-@stop
 
-@section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
-@stop
+    @stop
 
-@section('js')
-    <script>
-        console.log('Hi!');
-    </script>
-@stop
+
+    @section('js')
+
+    @stop

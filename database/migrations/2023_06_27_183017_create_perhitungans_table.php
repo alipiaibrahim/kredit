@@ -17,14 +17,16 @@ class CreatePerhitungansTable extends Migration
             $table->id();
             $table->string('nama');
             $table->decimal('penghasilan', 10, 2);
-            $table->integer('usia');
-            $table->string('status_pekerjaan');
-            $table->integer('keluarga');
-            $table->string('status_rumah');
-            $table->string('penjamin');
+            $table->decimal('usia');
+            $table->decimal('status_pekerjaan');
+            $table->decimal('keluarga');
+            $table->decimal('status_rumah');
+            $table->decimal('penjamin');
             $table->decimal('cicilan', 10, 2);
-            $table->boolean('bpkb_kendaraan');
-            $table->integer('lama_bekerja');
+            $table->decimal('bpkb_kendaraan');
+            $table->decimal('lama_bekerja');
+            $table->decimal('hasil');
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }

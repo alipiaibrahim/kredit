@@ -17,7 +17,7 @@ class KriteriaController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $subkriterias = Subkriteria::with('kriterias')->get();
+        $subkriterias = Subkriteria::with('kriteria')->get();
         $kriterias = Kriteria::all();
         return view('kriteria.show', compact('user', 'subkriterias'));
     }

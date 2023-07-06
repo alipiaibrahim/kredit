@@ -192,7 +192,7 @@ return [
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
     'classes_content' => '',
-    'classes_sidebar' => 'sidebar-dark-primary elevation-4',
+    'classes_sidebar' => 'sidebar-dark-success elevation-4',
     'classes_sidebar_nav' => '',
     'classes_topnav' => 'navbar-white navbar-light',
     'classes_topnav_nav' => 'navbar-expand',
@@ -316,7 +316,7 @@ return [
             'text'      => 'Data Nasabah',
             'url'       => 'admin/nasabah',
             'icon'      => 'fas fa-folder-open',
-            'can'       => ['isAdmin']
+            'can'       => ['isUser', 'isAdmin']
         ],
         [
             'text'        => 'Data Akun',
@@ -334,13 +334,13 @@ return [
             'text'      => 'Simulasi Pinjaman',
             'url'       => 'admin/pinjaman',
             'icon'      => 'fas fa-comments',
-            'can'       => ['isAdmin']
+            'can'       => ['isUser', 'isAdmin']
         ],
         [
             'text'      => 'Perhitungan MFEP',
             'url'       => 'admin/perhitungan',
             'icon'      => 'fas fa-comments',
-            'can'       => ['isAdmin']
+            'can'       => ['isUser', 'isAdmin']
         ],
     ],
 

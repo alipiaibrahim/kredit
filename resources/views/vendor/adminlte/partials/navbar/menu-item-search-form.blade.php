@@ -1,7 +1,7 @@
 <li class="nav-item">
 
     {{-- Search toggle button --}}
-    <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+    <a class="nav-link" style="color: white" data-widget="navbar-search" href="#" role="button">
         <i class="fas fa-search"></i>
     </a>
 
@@ -15,9 +15,7 @@
                 {{-- Search input --}}
                 <input class="form-control form-control-navbar" type="search"
                     @isset($item['id']) id="{{ $item['id'] }}" @endisset
-                    name="{{ $item['input_name'] }}"
-                    placeholder="{{ $item['text'] }}"
-                    aria-label="{{ $item['text'] }}">
+                    name="{{ $item['input_name'] }}" placeholder="{{ $item['text'] }}" aria-label="{{ $item['text'] }}">
 
                 {{-- Search buttons --}}
                 <div class="input-group-append">

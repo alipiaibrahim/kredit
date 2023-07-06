@@ -23,9 +23,5 @@ class Perhitungan extends Model
         'lama_bekerja',
     ];
 
-    // public function subkriteria()
-    // {
-    //     return $this->belongsTo(Subkriteria::class, 'penghasilan,','id')
-    //                     ->withDefault(['users' => 'Tahun Akademik Belum Dipilih']);
-    // }
+
 }

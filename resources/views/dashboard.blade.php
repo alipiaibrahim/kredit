@@ -18,10 +18,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{ url('http://127.0.0.1:8000') }}">Beranda</a>
+                    <a class="nav-link" href="{{ url('http://127.0.0.1:8000') }}" style="color: white">Beranda</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('') }}">Simulasi Peminjaman</a>
+                    <a class="nav-link" href="{{ route('') }}" style="color: white">Simulasi Peminjaman</a>
                 </li>
             </ul>
         </div>

@@ -18,10 +18,8 @@
                                     <th>No</th>
                                     <th>Nama</th>
                                     <th>No KTP</th>
+                                    <th>Tanggal Lahir</th>
                                     <th>Alamat</th>
-                                    <th>Desa</th>
-                                    <th>Kecamatan</th>
-                                    <th>Kabupaten</th>
                                     <th>Pekerjaan</th>
                                     <th>No Telepon</th>
                                     <th>Email</th>
@@ -36,10 +34,8 @@
                                         <td class="text-center">{{ $no++ }}</td>
                                         <td class="text-center">{{ $row->nama }}</td>
                                         <td class="text-center">{{ $row->no_ktp }}</td>
+                                        <td class="text-center">{{ $row->tgl_lahir }}</td>
                                         <td class="text-center">{{ $row->alamat }}</td>
-                                        <td class="text-center">{{ $row->desa }}</td>
-                                        <td class="text-center">{{ $row->kecamatan }}</td>
-                                        <td class="text-center">{{ $row->kabupaten }}</td>
                                         <td class="text-center">{{ $row->pekerjaan }}</td>
                                         <td class="text-center">{{ $row->tlpn }}</td>
                                         <td class="text-center">{{ $row->email }}</td>
@@ -61,7 +57,3 @@
 
     @stop
 
-
-    @section('js')
-
-    @stop

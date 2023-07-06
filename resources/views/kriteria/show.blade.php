@@ -25,7 +25,7 @@
                         @foreach ($subkriterias as $key)
                             <tr>
                                 <td class="text-center">{{ $no++ }}</td>
-                                <td class="text-center">{{ $key->kriterias->nama }}</td>
+                                <td class="text-center">{{ $key->kriteria->nama }}</td>
                                 <td class="text-center">{{ $key->nama }}</td>
                                 <td class="text-center">{{ $key->bobot_subkriteria }}</td>
                                 <td class="text-center">{{ $key->bobot_kriteria }}</td>
